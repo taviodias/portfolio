@@ -60,7 +60,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <p className="text-lg text-muted-foreground">Olá! 👋</p>
+          <p className="text-2xl text-muted-foreground">Olá! 👋</p>
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
             Eu sou{" "}
             <span className="text-gradient lg:inline block">Otávio Dias</span>
