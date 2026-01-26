@@ -7,39 +7,7 @@ import {
   Smartphone,
 } from "lucide-react";
 import { motion } from "framer-motion";
-
-const skills = [
-  {
-    category: "Frontend",
-    icon: Palette,
-    items: ["React", "TypeScript", "Tailwind CSS", "Next.js", "Svelte"],
-  },
-  {
-    category: "Backend",
-    icon: Server,
-    items: ["Node.js", "Python", "PHP", "REST APIs"],
-  },
-  {
-    category: "Mobile",
-    icon: Smartphone,
-    items: ["React Native", "Flutter", "iOS", "Android"],
-  },
-  {
-    category: "Banco de Dados",
-    icon: Database,
-    items: ["PostgreSQL", "MySQL", "MongoDB", "Redis", "Supabase"],
-  },
-  {
-    category: "DevOps",
-    icon: Globe,
-    items: ["Docker", "AWS", "CI/CD", "Git", "Github"],
-  },
-  {
-    category: "Ferramentas",
-    icon: Code2,
-    items: ["VS Code", "Figma", "Insomnia", "Linux", "Windows"],
-  },
-];
+import { Trans, useTranslation } from "react-i18next";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -64,6 +32,39 @@ const itemVariants = {
 };
 
 export function Skills() {
+  const { t } = useTranslation("translation", { keyPrefix: "skills" });
+  const skills = [
+    {
+      category: "Frontend",
+      icon: Palette,
+      items: ["React", "TypeScript", "Tailwind CSS", "Next.js", "Svelte"],
+    },
+    {
+      category: "Backend",
+      icon: Server,
+      items: ["Node.js", "Python", "PHP", "REST APIs"],
+    },
+    {
+      category: "Mobile",
+      icon: Smartphone,
+      items: ["React Native", "Flutter", "iOS", "Android"],
+    },
+    {
+      category: t("techs.db"),
+      icon: Database,
+      items: ["PostgreSQL", "MySQL", "MongoDB", "Redis", "Supabase"],
+    },
+    {
+      category: "DevOps",
+      icon: Globe,
+      items: ["Docker", "AWS", "CI/CD", "Git", "Github"],
+    },
+    {
+      category: t("techs.tools"),
+      icon: Code2,
+      items: ["VS Code", "Figma", "Insomnia", "Linux", "Windows"],
+    },
+  ];
   return (
     <section id="skills" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
@@ -76,11 +77,13 @@ export function Skills() {
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <h2 className="text-3xl md:text-4xl font-bold">
-            Skills & <span className="text-gradient">Tecnologias</span>
+            <Trans
+              i18nKey="skills.title"
+              components={[<span className="text-gradient" />]}
+            />
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Ferramentas e tecnologias que uso para transformar ideias em
-            produtos digitais
+            {t("description")}
           </p>
         </motion.div>
 
