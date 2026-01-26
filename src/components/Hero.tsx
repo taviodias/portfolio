@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { LanguageSelector } from "./LanguageSelector";
 
 const Icons = [
   {
@@ -53,6 +54,11 @@ export function Hero() {
           ease: "easeInOut",
         }}
       />
+
+      {/* Language Selector */}
+      <div className="absolute top-2 left-1/2 -translate-x-1/2">
+        <LanguageSelector />
+      </div>
 
       <div className="max-w-3xl mx-auto text-center space-y-8 relative z-10">
         {/* Greeting */}
