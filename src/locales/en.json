@@ -15,5 +15,27 @@
       "db": "Databases",
       "tools": "Toolkit"
     }
+  },
+  "projects": {
+    "title": "Featured <0>Projects</0>",
+    "description": "A selection of projects I've crafted with passion and care",
+    "githubButton": "Code"
+  },
+  "contact": {
+    "title": "Let's <0>Talk!</0>",
+    "description": "Have a project in mind or just want to say hi? I'd love to hear from you.",
+    "card": {
+      "location": "Location",
+      "remote": "Preference for remote work",
+      "social": "Socials"
+    },
+    "toast": {
+      "copySuccess": "Email copied!",
+      "copyMessage": "My email address has been copied to your clipboard."
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "madeWith": "Made with <0/> and lots of coffee."
   }
 }

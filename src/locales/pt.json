@@ -15,5 +15,27 @@
       "db": "Banco de Dados",
       "tools": "Ferramentas"
     }
+  },
+  "projects": {
+    "title": "Projetos em <0>Destaque</0>",
+    "description": "Alguns dos projetos que desenvolvi com paixão e dedicação",
+    "githubButton": "Código"
+  },
+  "contact": {
+    "title": "Vamos <0>Conversar?</0>",
+    "description": "Tem um projeto em mente ou quer apenas bater um papo? Adoraria ouvir você!",
+    "card": {
+      "location": "Localização",
+      "remote": "Disponível para trabalho remoto",
+      "social": "Redes Sociais"
+    },
+    "toast": {
+      "copySuccess": "Email copiado!",
+      "copyMessage": "O meu endereço de email foi copiado para sua área de transferência."
+    }
+  },
+  "footer": {
+    "rights": "Todos os direitos reservados.",
+    "madeWith": "Feito com <0/> e muito café."
   }
 }

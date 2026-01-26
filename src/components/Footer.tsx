@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import { Heart } from "lucide-react";
+import { Trans, useTranslation } from "react-i18next";
 
 export function Footer() {
+  const { t } = useTranslation("translation", { keyPrefix: "footer" });
   const currentYear = new Date().getFullYear();
 
   return (
@@ -21,7 +23,7 @@ export function Footer() {
             viewport={{ once: true }}
             transition={{ delay: 0.2, duration: 0.4 }}
           >
-            © {currentYear} Otávio Dias Dev. Todos os direitos reservados.
+            © {currentYear} Otávio Dias Dev. {t("rights")}
           </motion.p>
           <motion.p
             className="text-sm text-muted-foreground flex items-center gap-1"
@@ -30,14 +32,12 @@ export function Footer() {
             viewport={{ once: true }}
             transition={{ delay: 0.3, duration: 0.4 }}
           >
-            Feito com{" "}
-            <motion.span
-              animate={{ scale: [1, 1.2, 1] }}
-              transition={{ duration: 1, repeat: Infinity, repeatDelay: 1 }}
-            >
-              <Heart className="h-4 w-4 text-primary fill-primary" />
-            </motion.span>{" "}
-            e muito café.
+            <Trans
+              i18nKey="footer.madeWith"
+              components={[
+                <Heart className="h-4 w-4 text-primary fill-primary animate-pulse" />,
+              ]}
+            />
           </motion.p>
         </div>
       </div>

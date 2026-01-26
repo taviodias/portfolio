@@ -1,6 +1,7 @@
 import { ExternalLink, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { Trans, useTranslation } from "react-i18next";
 
 const projects = [
   {
@@ -58,8 +59,9 @@ const itemVariants = {
 };
 
 export function Projects() {
+  const { t } = useTranslation("translation", { keyPrefix: "projects" });
   return (
-    <section id="projetos" className="py-24 px-6 bg-secondary/30">
+    <section id="projects" className="py-24 px-6 bg-secondary/30">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <motion.div
@@ -70,10 +72,13 @@ export function Projects() {
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <h2 className="text-3xl md:text-4xl font-bold">
-            Projetos em <span className="text-gradient">Destaque</span>
+            <Trans
+              i18nKey="projects.title"
+              components={[<span className="text-gradient" />]}
+            />
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Alguns dos projetos que desenvolvi com paixão e dedicação
+            {t("description")}
           </p>
         </motion.div>
 
@@ -113,7 +118,7 @@ export function Projects() {
                 </p>
 
                 {/* Stack */}
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 mt-auto">
                   {project.stack.map((tech, techIndex) => (
                     <motion.span
                       key={tech}
@@ -147,7 +152,7 @@ export function Projects() {
                         rel="noopener noreferrer"
                       >
                         <Github className="h-4 w-4 mr-2" />
-                        Código
+                        {t("githubButton")}
                       </a>
                     </Button>
                   </motion.div>

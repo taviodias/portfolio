@@ -125,7 +125,7 @@ export function Hero() {
             transition={{ type: "spring", stiffness: 400, damping: 17 }}
           >
             <Button size="lg" className="min-w-45 glow-effect" asChild>
-              <a href="#projetos">{t("button.projects")}</a>
+              <a href="#projects">{t("button.projects")}</a>
             </Button>
           </motion.div>
           <motion.div
@@ -134,7 +134,7 @@ export function Hero() {
             transition={{ type: "spring", stiffness: 400, damping: 17 }}
           >
             <Button variant="outline" size="lg" className="min-w-45" asChild>
-              <a href="#contato">{t("button.contact")}</a>
+              <a href="#contact">{t("button.contact")}</a>
             </Button>
           </motion.div>
         </motion.div>
