@@ -1,0 +1,19 @@
+{
+  "hero": {
+    "hello": "Olá!",
+    "presentation": "Eu sou",
+    "about": "Desenvolvedor Fullstack apaixonado por criar experiências digitais incríveis. Transformo café em código e ideias em realidade.",
+    "button": {
+      "projects": "Ver Projetos",
+      "contact": "Fale Comigo"
+    }
+  },
+  "skills": {
+    "title": "Skills & <0>Tecnologias</0>",
+    "description": "Ferramentas e tecnologias que uso para transformar ideias em produtos digitais",
+    "techs": {
+      "db": "Banco de Dados",
+      "tools": "Ferramentas"
+    }
+  }
+}
