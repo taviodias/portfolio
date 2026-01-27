@@ -1,0 +1,41 @@
+{
+  "hero": {
+    "hello": "¡Hola!",
+    "presentation": "Soy",
+    "about": "Desarrollador Fullstack apasionado por crear experiencias digitales increíbles. Transformo café en código e ideas en realidad.",
+    "button": {
+      "projects": "Mis Proyectos",
+      "contact": "Hablemos"
+    }
+  },
+  "skills": {
+    "title": "Mis Habilidades y <0>Tecnologías</0>",
+    "description": "Las herramientas y tecnologías que uso para transformar ideas en productos digitales",
+    "techs": {
+      "db": "Bases de Datos",
+      "tools": "Herramientas"
+    }
+  },
+  "projects": {
+    "title": "Proyectos <0>Destacados</0>",
+    "description": "Una selección de proyectos que he creado con pasión y dedicación",
+    "githubButton": "Código"
+  },
+  "contact": {
+    "title": "¡<0>Hablemos!</0>",
+    "description": "¿Tienes un proyecto en mente o solo quieres saludar? Me encantaría escucharte.",
+    "card": {
+      "location": "Ubicación",
+      "remote": "Preferencia por trabajo remoto",
+      "social": "Redes"
+    },
+    "toast": {
+      "copySuccess": "¡Email copiado!",
+      "copyMessage": "Mi dirección de email se ha copiado al portapapeles."
+    }
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados.",
+    "madeWith": "Hecho con <0/> y mucho café."
+  }
+}

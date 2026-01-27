@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import { LanguageSelector } from "./LanguageSelector";
 
 const Icons = [
   {
@@ -21,6 +23,7 @@ const Icons = [
 ];
 
 export function Hero() {
+  const { t } = useTranslation("translation", { keyPrefix: "hero" });
   return (
     <section className="min-h-screen flex flex-col items-center justify-center px-6 relative overflow-hidden">
       {/* Background gradient */}
@@ -52,6 +55,11 @@ export function Hero() {
         }}
       />
 
+      {/* Language Selector */}
+      <div className="absolute top-2 left-1/2 -translate-x-1/2">
+        <LanguageSelector />
+      </div>
+
       <div className="max-w-3xl mx-auto text-center space-y-8 relative z-10">
         {/* Greeting */}
         <motion.div
@@ -60,9 +68,9 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <p className="text-2xl text-muted-foreground">Olá! 👋</p>
+          <p className="text-2xl text-muted-foreground">{t("hello")} 👋</p>
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
-            Eu sou{" "}
+            {t("presentation") + " "}
             <span className="text-gradient lg:inline block">Otávio Dias</span>
           </h1>
         </motion.div>
@@ -74,8 +82,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
         >
-          Desenvolvedor Fullstack apaixonado por criar experiências digitais
-          incríveis. Transformo café em código e ideias em realidade.
+          {t("about")}
         </motion.p>
 
         {/* Social links */}
@@ -124,7 +131,7 @@ export function Hero() {
             transition={{ type: "spring", stiffness: 400, damping: 17 }}
           >
             <Button size="lg" className="min-w-45 glow-effect" asChild>
-              <a href="#projetos">Ver Projetos</a>
+              <a href="#projects">{t("button.projects")}</a>
             </Button>
           </motion.div>
           <motion.div
@@ -133,7 +140,7 @@ export function Hero() {
             transition={{ type: "spring", stiffness: 400, damping: 17 }}
           >
             <Button variant="outline" size="lg" className="min-w-45" asChild>
-              <a href="#contato">Fale Comigo</a>
+              <a href="#contact">{t("button.contact")}</a>
             </Button>
           </motion.div>
         </motion.div>

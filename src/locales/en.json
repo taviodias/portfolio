@@ -1,0 +1,41 @@
+{
+  "hero": {
+    "hello": "Hello!",
+    "presentation": "I'm",
+    "about": "Fullstack developer passionate about creating amazing digital experiences. I turn coffee into code and ideas into reality.",
+    "button": {
+      "projects": "My Projects",
+      "contact": "Let's Talk"
+    }
+  },
+  "skills": {
+    "title": "My Skills & <0>Techs</0>",
+    "description": "The tools and technologies I use to turn ideas into digital products",
+    "techs": {
+      "db": "Databases",
+      "tools": "Toolkit"
+    }
+  },
+  "projects": {
+    "title": "Featured <0>Projects</0>",
+    "description": "A selection of projects I've crafted with passion and care",
+    "githubButton": "Code"
+  },
+  "contact": {
+    "title": "Let's <0>Talk!</0>",
+    "description": "Have a project in mind or just want to say hi? I'd love to hear from you.",
+    "card": {
+      "location": "Location",
+      "remote": "Preference for remote work",
+      "social": "Socials"
+    },
+    "toast": {
+      "copySuccess": "Email copied!",
+      "copyMessage": "My email address has been copied to your clipboard."
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "madeWith": "Made with <0/> and lots of coffee."
+  }
+}

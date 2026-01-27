@@ -12,6 +12,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { toast } from "sonner";
+import { Trans, useTranslation } from "react-i18next";
 
 const socialLinks = [
   {
@@ -66,19 +67,19 @@ const email = "otaviodias.dev@gmail.com";
 
 export function Contact() {
   const [copied, setCopied] = useState(false);
+  const { t } = useTranslation("translation", { keyPrefix: "contact" });
 
   const handleCopyEmail = async () => {
     await navigator.clipboard.writeText(email);
     setCopied(true);
-    toast("Email copiado!", {
-      description:
-        "O endereço de email foi copiado para a área de transferência.",
+    toast(t("toast.copySuccess"), {
+      description: t("toast.copyMessage"),
     });
     setTimeout(() => setCopied(false), 2000);
   };
 
   return (
-    <section id="contato" className="py-24 px-6">
+    <section id="contact" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <motion.div
@@ -89,11 +90,13 @@ export function Contact() {
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <h2 className="text-3xl md:text-4xl font-bold">
-            Vamos <span className="text-gradient">Conversar?</span>
+            <Trans
+              i18nKey="contact.title"
+              components={[<span className="text-gradient" />]}
+            />
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Tem um projeto em mente ou quer apenas bater um papo? Adoraria ouvir
-            você!
+            {t("description")}
           </p>
         </motion.div>
 
@@ -156,11 +159,11 @@ export function Contact() {
               >
                 <MapPin className="h-5 w-5" />
               </motion.div>
-              <h3 className="font-semibold">Localização</h3>
+              <h3 className="font-semibold">{t("card.location")}</h3>
             </div>
             <p className="text-muted-foreground">Brasília, DF 🇧🇷</p>
             <p className="text-sm text-muted-foreground mt-1">
-              Disponível para trabalho remoto
+              {t("card.remote")}
             </p>
           </motion.div>
 
@@ -169,7 +172,7 @@ export function Contact() {
             className="bg-card rounded-xl p-6 border border-border hover:border-primary/30 transition-all duration-300 lg:col-span-2"
             variants={itemVariants}
           >
-            <h3 className="font-semibold mb-4">Redes Sociais</h3>
+            <h3 className="font-semibold mb-4">{t("card.social")}</h3>
             <div className="flex flex-col lg:flex-row gap-2">
               {socialLinks.map((social, index) => (
                 <motion.a
