@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { Trans, useTranslation } from "react-i18next";
+import { useMemo } from "react";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -33,38 +34,41 @@ const itemVariants = {
 
 export function Skills() {
   const { t } = useTranslation("translation", { keyPrefix: "skills" });
-  const skills = [
-    {
-      category: "Frontend",
-      icon: Palette,
-      items: ["React", "TypeScript", "Tailwind CSS", "Next.js", "Svelte"],
-    },
-    {
-      category: "Backend",
-      icon: Server,
-      items: ["Node.js", "Python", "PHP", "REST APIs"],
-    },
-    {
-      category: "Mobile",
-      icon: Smartphone,
-      items: ["React Native", "Flutter", "iOS", "Android"],
-    },
-    {
-      category: t("techs.db"),
-      icon: Database,
-      items: ["PostgreSQL", "MySQL", "MongoDB", "Redis", "Supabase"],
-    },
-    {
-      category: "DevOps",
-      icon: Globe,
-      items: ["Docker", "AWS", "CI/CD", "Git", "Github"],
-    },
-    {
-      category: t("techs.tools"),
-      icon: Code2,
-      items: ["VS Code", "Figma", "Insomnia", "Linux", "Windows"],
-    },
-  ];
+  const skills = useMemo(
+    () => [
+      {
+        category: "Frontend",
+        icon: Palette,
+        items: ["React", "TypeScript", "Tailwind CSS", "Next.js", "Svelte"],
+      },
+      {
+        category: "Backend",
+        icon: Server,
+        items: ["Node.js", "Python", "PHP", "REST APIs"],
+      },
+      {
+        category: "Mobile",
+        icon: Smartphone,
+        items: ["React Native", "Flutter", "iOS", "Android"],
+      },
+      {
+        category: t("techs.db"),
+        icon: Database,
+        items: ["PostgreSQL", "MySQL", "MongoDB", "Redis", "Supabase"],
+      },
+      {
+        category: "DevOps",
+        icon: Globe,
+        items: ["Docker", "AWS", "CI/CD", "Git", "Github"],
+      },
+      {
+        category: t("techs.tools"),
+        icon: Code2,
+        items: ["VS Code", "Figma", "Insomnia", "Linux", "Windows"],
+      },
+    ],
+    [t],
+  );
   return (
     <section id="skills" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
@@ -95,9 +99,9 @@ export function Skills() {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
-          {skills.map((skill) => (
+          {skills.map((skill, index) => (
             <motion.div
-              key={skill.category}
+              key={index}
               variants={itemVariants}
               className="group p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10"
             >
