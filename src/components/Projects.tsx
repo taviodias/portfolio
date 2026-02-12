@@ -2,38 +2,38 @@ import { ExternalLink, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Trans, useTranslation } from "react-i18next";
+import { cn } from "@/lib/utils";
 
 const projects = [
   {
-    title: "E-Commerce Platform",
+    title: "LP - Pintar Sem Medo",
     description:
-      "Plataforma completa de e-commerce com carrinho de compras, pagamentos integrados e painel administrativo.",
-    image:
-      "https://images.unsplash.com/photo-1661956602116-aa6865609028?w=600&h=400&fit=crop",
-    stack: ["React", "Node.js", "PostgreSQL", "Stripe"],
-    liveUrl: "#",
-    githubUrl: "#",
+      "Landing Page do curso Pintar Sem Medo com responsividade e integração com a Hotmart.",
+    image: "/lp_pintar_sem_medo.webp",
+    stack: ["React", "Tailwind", "Responsivo"],
+    liveUrl: "https://mdias.club/pintar-sem-medo",
+    githubUrl: "https://github.com/taviodias/lp-pintar-sem-medo",
   },
-  {
-    title: "Task Management App",
-    description:
-      "Aplicativo de gerenciamento de tarefas com drag-and-drop, colaboração em tempo real e notificações.",
-    image:
-      "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
-    stack: ["Next.js", "TypeScript", "Supabase", "Tailwind"],
-    liveUrl: "#",
-    githubUrl: "#",
-  },
-  {
-    title: "Social Analytics Dashboard",
-    description:
-      "Dashboard de analytics para redes sociais com gráficos interativos e relatórios automatizados.",
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-    stack: ["React", "D3.js", "Python", "FastAPI"],
-    liveUrl: "#",
-    githubUrl: "#",
-  },
+  // {
+  //   title: "Task Management App",
+  //   description:
+  //     "Aplicativo de gerenciamento de tarefas com drag-and-drop, colaboração em tempo real e notificações.",
+  //   image:
+  //     "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
+  //   stack: ["Next.js", "TypeScript", "Supabase", "Tailwind"],
+  //   liveUrl: "#",
+  //   githubUrl: "#",
+  // },
+  // {
+  //   title: "Social Analytics Dashboard",
+  //   description:
+  //     "Dashboard de analytics para redes sociais com gráficos interativos e relatórios automatizados.",
+  //   image:
+  //     "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+  //   stack: ["React", "D3.js", "Python", "FastAPI"],
+  //   liveUrl: "#",
+  //   githubUrl: "#",
+  // },
 ];
 
 const containerVariants = {
@@ -90,12 +90,15 @@ export function Projects() {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
-          {projects.map((project) => (
+          {projects.map((project, index) => (
             <motion.article
-              key={project.title}
+              key={index}
               variants={itemVariants}
               transition={{ duration: 0.3, ease: "easeOut" }}
-              className="group bg-card rounded-xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-500 hover:shadow-xl hover:shadow-primary/10"
+              className={cn(
+                index === 0 && "lg:col-start-2",
+                "group bg-card rounded-xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-500 hover:shadow-xl hover:shadow-primary/10",
+              )}
             >
               {/* Image */}
               <div className="relative overflow-hidden aspect-video">
