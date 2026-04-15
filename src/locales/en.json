@@ -19,7 +19,17 @@
   "projects": {
     "title": "Featured <0>Projects</0>",
     "description": "A selection of projects I've crafted with passion and care",
-    "githubButton": "Code"
+    "githubButton": "Code",
+    "list": {
+      "project1": {
+        "title": "LP - Pintar Sem Medo",
+        "description": "Landing Page for the Pintar Sem Medo course with responsiveness and Hotmart integration."
+      },
+      "project2": {
+        "title": "Agenda Flamengo",
+        "description": "An app to synchronize Flamengo games with Google Calendar, keeping fans updated on upcoming matches."
+      }
+    }
   },
   "contact": {
     "title": "Let's <0>Talk!</0>",
