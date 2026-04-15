@@ -19,7 +19,17 @@
   "projects": {
     "title": "Projetos em <0>Destaque</0>",
     "description": "Alguns dos projetos que desenvolvi com paixão e dedicação",
-    "githubButton": "Código"
+    "githubButton": "Código",
+    "list": {
+      "project1": {
+        "title": "LP - Pintar Sem Medo",
+        "description": "Landing Page do curso Pintar Sem Medo com responsividade e integração com a Hotmart."
+      },
+      "project2": {
+        "title": "Agenda Flamengo",
+        "description": "Um app para sincronizar o jogos do Flamengo com o Google Calendar, mantendo os torcedores atualizados sobre os próximos jogos."
+      }
+    }
   },
   "contact": {
     "title": "Vamos <0>Conversar?</0>",
