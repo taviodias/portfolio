@@ -4,38 +4,6 @@ import { motion } from "framer-motion";
 import { Trans, useTranslation } from "react-i18next";
 import { cn } from "@/lib/utils";
 
-const projects = [
-  {
-    title: "LP - Pintar Sem Medo",
-    description:
-      "Landing Page do curso Pintar Sem Medo com responsividade e integração com a Hotmart.",
-    image: "/lp_pintar_sem_medo.webp",
-    stack: ["React", "Tailwind", "Responsivo"],
-    liveUrl: "https://mdias.club/pintar-sem-medo",
-    githubUrl: "https://github.com/taviodias/lp-pintar-sem-medo",
-  },
-  // {
-  //   title: "Task Management App",
-  //   description:
-  //     "Aplicativo de gerenciamento de tarefas com drag-and-drop, colaboração em tempo real e notificações.",
-  //   image:
-  //     "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
-  //   stack: ["Next.js", "TypeScript", "Supabase", "Tailwind"],
-  //   liveUrl: "#",
-  //   githubUrl: "#",
-  // },
-  // {
-  //   title: "Social Analytics Dashboard",
-  //   description:
-  //     "Dashboard de analytics para redes sociais com gráficos interativos e relatórios automatizados.",
-  //   image:
-  //     "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-  //   stack: ["React", "D3.js", "Python", "FastAPI"],
-  //   liveUrl: "#",
-  //   githubUrl: "#",
-  // },
-];
-
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -60,6 +28,31 @@ const itemVariants = {
 
 export function Projects() {
   const { t } = useTranslation("translation", { keyPrefix: "projects" });
+  const projects = [
+    {
+      title: t("list.project1.title"),
+      description: t("list.project1.description"),
+      image: "/lp_pintar_sem_medo.webp",
+      stack: ["React", "Tailwind", "Responsivo"],
+      liveUrl: "https://mdias.club/pintar-sem-medo",
+      githubUrl: "https://github.com/taviodias/lp-pintar-sem-medo",
+    },
+    {
+      title: t("list.project2.title"),
+      description: t("list.project2.description"),
+      image: "/agenda-flamengo.webp",
+      stack: [
+        "Next.js",
+        "TypeScript",
+        "Supabase",
+        "Tailwind",
+        "Drizzle",
+        "GoogleAPI",
+      ],
+      liveUrl: "https://agenda-flamengo.vercel.app/",
+      githubUrl: "https://github.com/taviodias/agenda-flamengo",
+    },
+  ];
   return (
     <section id="projects" className="py-24 px-6 bg-secondary/30">
       <div className="max-w-6xl mx-auto">
@@ -84,7 +77,7 @@ export function Projects() {
 
         {/* Projects Grid */}
         <motion.div
-          className="grid grid-cols-1 lg:grid-cols-3 gap-8"
+          className="flex flex-wrap justify-center gap-8"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -96,12 +89,12 @@ export function Projects() {
               variants={itemVariants}
               transition={{ duration: 0.3, ease: "easeOut" }}
               className={cn(
-                index === 0 && "lg:col-start-2",
+                "flex flex-col w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] max-w-md",
                 "group bg-card rounded-xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-500 hover:shadow-xl hover:shadow-primary/10",
               )}
             >
               {/* Image */}
-              <div className="relative overflow-hidden aspect-video">
+              <div className="relative w-full overflow-hidden aspect-video">
                 <motion.img
                   src={project.image}
                   alt={project.title}
@@ -112,7 +105,7 @@ export function Projects() {
               </div>
 
               {/* Content */}
-              <div className="p-6 space-y-4">
+              <div className="flex flex-col flex-1 p-6 space-y-4">
                 <h3 className="text-xl font-semibold group-hover:text-primary transition-colors duration-300">
                   {project.title}
                 </h3>
